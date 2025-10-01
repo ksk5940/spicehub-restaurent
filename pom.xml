@@ -8,17 +8,19 @@
     
     <groupId>com.spicehub</groupId>
     <artifactId>spicehub-webapp</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
     
     <name>SpiceHub Restaurant Web Application</name>
     <description>Authentic Hyderabadi Biryani Restaurant Website (Static UI)</description>
     
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <sonar.host.url>http://54.221.8.252:9000//</sonar.host.url>
+	<sonar.login>admin</sonar.login>
+	<sonar.password>admin123</sonar.password>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>17</maven.compiler.source>
+         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     
     <!-- No dependencies needed for static content -->
@@ -31,6 +33,22 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+	<distributionManagement>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>spicehub-restaurent-release</name>
+	      <url>http://54.197.27.182:8081/repository/spicehub-restaurent-release/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>spicehub-restaurent-snapshot</name>
+	      <url>http://54.197.27.182:8081/repository/spicehub-restaurent-snapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
     
     <build>
         <finalName>spicehub-webapp</finalName>
